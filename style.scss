@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+
+$main-font: "Ubuntu", sans-serif;
+$regular: 400;
+$medium: 500;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #fff;
+    color: red;
+  }
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  width: 60%;
+  max-width: 1440px;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  background-image: linear-gradient(red, orange);
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: $main-font;
+  color: #fff;
+  font-size: 1rem;
+
+  h1 {
+    font-weight: $medium;
+    font-size: 5em;
+    margin-top: 0.3em;
+
+    &::selection {
+      background-color: orange;
+    }
+  }
+
+  > * + * {
+    margin-top: 2rem;
+  }
+}
+
+.map {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  img:first-child {
+    position: relative;
+  }
+
+  .img-hidden {
+    visibility: hidden;
+  }
+
+  .img-visible {
+    visibility: visible;
+  }
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  body {
+    width: 90%;
+  }
+}
+
+@media (max-width: 660px) {
+  html {
+    height: 100%;
+  }
+
+  body {
+    h1 {
+      font-size: 3em;
+      margin-top: 1em;
+    }
+  }
+
+  .buttons {
+    > * {
+      margin: 1rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    h1 {
+      text-align: center;
+    }
+  }
+}
