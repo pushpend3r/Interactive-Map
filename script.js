@@ -26,6 +26,8 @@ document.querySelectorAll(".btn").forEach((mapButton) => {
     class_name = class_name.slice(class_name.indexOf("-") + 1);
     MapOfImages.get(class_name).classList.replace("img-hidden", "img-visible");
 
+    if (previousButtonClick === MapOfImages.get(class_name)) return;
+
     if (previousButtonClick !== null) {
       previousButtonClick.classList.replace("img-visible", "img-hidden");
     }
@@ -34,4 +36,12 @@ document.querySelectorAll(".btn").forEach((mapButton) => {
 
     MapOfImages.get("original").classList.replace("img-visible", "img-hidden");
   });
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (previousButtonClick === null) return;
+
+  previousButtonClick.classList.replace("img-visible", "img-hidden");
+  MapOfImages.get("original").classList.replace("img-hidden", "img-visible");
+  previousButtonClick = null;
 });

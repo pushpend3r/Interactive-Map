@@ -20,6 +20,12 @@ button {
   color: inherit;
 }
 
+#resetBtn {
+  @extend .btn;
+  background-color: white !important;
+  color: black !important;
+}
+
 .btn {
   background-color: rgba(0, 0, 0, 0);
   padding: 10px 15px;
@@ -64,7 +70,7 @@ body {
   }
 
   > * + * {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
   }
 }
 
@@ -113,7 +119,7 @@ body {
 
   .buttons {
     > * {
-      margin: 1rem;
+      margin: 0.5rem;
     }
   }
 }
